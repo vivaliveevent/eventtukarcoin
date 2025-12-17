@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Tukar Coin - Viva Live</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+      //Konfigurasi Tailwind(Untuk darkMode:'class')
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+
+    <style>
+      .img-hover {
+        transition: transform 0.4 ease;
+      }
+      .img-hover:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 =">
+      <!-- Navbar -->
+      <nav class="bg-white dark:bg-gray-900 shadow-md px-4 py-3">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+          <div class="text-2xl font-bold text-orange-600 dark:text-orange-500">Event Tukar Coin</div>
+          <!-- Tombol hamburger -->
+          <button id="toggleBtn" class="md:hidden text-2xl py-2 px-3 rounded-lg border border-gray-800 dark:border-orange-400 text-gray-800 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-900 transition text-sm sm:text-base">
+            ☰
+          </button>
+          <!-- Dekstop Menu -->
+          <ul id="menu" class="hidden md:flex space-x-6 text-gray-700 dark:text-white font-semibold">
+            <li><a href="#beranda" class="hover:text-orange-500">Beranda</a></li>
+            <li><a href="#kategori" class="hover:text-orange-500">Kategori</a></li>
+            <li><a href="#kontak" class="hover:text-orange-500">Jadwal Live</a></li>
+          </ul>
+        </div>
+        <!-- Menu di HP -->
+        <ul id="mobileMenu" class="md:hidden hidden mt-4 space-y-2 text-gray-700 dark:text-white font-semibold">
+          <li><a href="#beranda" class="hover:text-orange-500">Beranda</a></li>
+          <li><a href="#kategori" class="hover:text-orange-500">Kategori</a></li>
+          <li><a href="#kontak" class="hover:text-orange-500">Jadwal Live</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section  -->
+    <section id="beranda" class="py-20 px-6 scroll-mt-20 bg-gradient-to-br from-white via-slate-100 to-slate-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition duration-300">
+      <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-10">
+        <!-- Konten Kiri -->
+        <div class="text-center md:text-left flex-1">
+          <h1 id="judul" data-aos="fade-up" class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">Hadiah <span class="text-orange-600 dark:text-orange-500">Ekslusif</span> 👋</h1>
+          <p data-aos="fade-up" data-aos-delay="100" class="text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-xl leading-relaxed mx-auto md:mx-0">Hanya Untuk Coinmu!</p>
+          <div class="mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+            <a href="#motor" data-aos="zoom-in" data-aos-delay="150" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg shadow-md transition text-sm sm:text-base">🔎 Lihat Hadiah</a>
+            <button
+              onclick="gantiTema()"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              class="text-orange-600 px-6 py-3 border border-orange-600 dark:border-orange-400 dark:text-orange-400 rounded-lg hover:bg-orange-50 dark:hover:bg-orange-900 transition text-sm sm:text-base"
+            >
+              🌓 Toggle Mode
+            </button>
+          </div>
+        </div>
+
+        <!-- Slider kanan -->
+        <div class="flex-1">
+          <div class="swiper mySwiper w-56 sm:w-70 md:w-full max-w-sm mx-auto rounded-xl overflow-hidden" data-aos="zoom-in-left">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/motor/event_coin.png" alt="Motor 1" class="w-full h-70 object-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/motor/shake.png" alt="Motor 2" class="w-full h-70 object-cover" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/motor/viva_logo.png" alt="Motor 3" class="w-full h-70 object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        spaceBetween: 20,
+      });
+    </script>
+
+        <!-- Kartu brand lainnya -->
+      </div>
+    </section>
+
+    <!-- Kategori -->
+    <section id="kategori" data-aos="fade-up" class="scroll-mt-20 px-6 py-8 text-center bg-gradient-to-br from-slate-50 via-slate-100 to-slate-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 transition duration-300">
+      <h2 class="text-2xl font-bold text-orange-400 mb-4">Tukarkan Coin Dengan</h2>
+    <!-- Filter/Search Section (Bonus) -->
+    <section class="flex bg-gray-100 dark:bg-gray-900 px-10 py-6 text-center text-sm sm:text-base">
+      <input type="text" placeholder="Cari Hadiah..." class="flex px-4 py-2 w-full max-w-sm rounded-md border border-orange-400 text-gray-800 dark:text-gray-100 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-500" />
+    </section>
+
+    <!-- Grid Hadiah -->
+    <section id="motor" class="bg-gray-100 dark:bg-gray-900 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6 pb-20">
+      <!-- Kartu Produk (contoh) delay aos-100/kartu -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="100">
+        <img src="img/motor/speaker_charger.png" alt="SPEAKER/CHARGER" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <!-- Diskon <span class="inline-block bg-red-600 text-xs text-white px-2 py-1 rounded-full mb-2">Diskon 15%</span> -->
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">SPEAKER/CHARGER</h3>
+        <p class="text-orange-500 font-bold">200.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 2 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="200">
+        <img src="img/motor/tumbler.png" alt="CFMoto MT450" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">TUMBLER THERMOS</h3>
+        <p class="text-orange-500 font-bold">200.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 3 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="300">
+        <img src="img/motor/panci_listrik.png" alt="CFMoto MT450" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">PANCI LISTRIK</h3>
+        <p class="text-orange-500 font-bold">120.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 4 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="400">
+        <img src="img/motor/catokan_rambut.png" alt="CFMoto MT450" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">CATOKAN RAMBUT</h3>
+        <p class="text-orange-500 font-bold">200.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 5 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="500">
+        <img src="img/motor/Hair_dryer.png" alt="CFMoto MT450" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">HAIR DRYER</h3>
+        <p class="text-orange-500 font-bold">130.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 6 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="600">
+        <img src="img/motor/blender_portabel.png" alt="CFMoto MT450" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">BLENDER JUS PORTABLE</h3>
+        <p class="text-orange-500 font-bold">200.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="700">
+        <img src="img/motor/lampu_nyamuk.png" alt="CFMoto MT450" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">LAMPU NYAMUK</h3>
+        <p class="text-orange-500 font-bold">120.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="800">
+        <img src="img/motor/setrika.png" alt="CFMoto MT450" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">SETRIKA</h3>
+        <p class="text-orange-500 font-bold">200.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+	  
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="100">
+        <img src="img/motor/headphone.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <!-- Diskon <span class="inline-block bg-red-600 text-xs text-white px-2 py-1 rounded-full mb-2">Diskon 15%</span> -->
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">HEADPHONE</h3>
+        <p class="text-orange-500 font-bold">220.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+	  
+	        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="200">
+        <img src="img/motor/vakum_lantai.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">VACUM LANTAI</h3>
+        <p class="text-orange-500 font-bold">30.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 3 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="300">
+        <img src="img/motor/speaker1.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">SPEAKER BLUETOOTH</h3>
+        <p class="text-orange-500 font-bold">200.000 Coin </P>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Beli via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 4 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="400">
+        <img src="img/motor/sikat_gigi.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">SIKAT GIGI ELEKTRIK</h3>
+        <p class="text-orange-500 font-bold">220.000 Coin </p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 5 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="500">
+        <img src="img/motor/kipas_portable.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">KIPAS PORTABLE</h3>
+        <p class="text-orange-500 font-bold">100.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 6 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="600">
+        <img src="img/motor/kipas_portable1.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">KIPAS PORTABLE</h3>
+        <p class="text-orange-500 font-bold">80.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="700">
+        <img src="img/motor/diffuser.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">DIFFUSER</h3>
+        <p class="text-orange-500 font-bold">200.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="800">
+        <img src="img/motor/kipas_mini.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">KIPAS MINI</h3>
+        <p class="text-orange-500 font-bold">120.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="100">
+        <img src="img/motor/vakum_cleaner.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <!-- Diskon <span class="inline-block bg-red-600 text-xs text-white px-2 py-1 rounded-full mb-2">Diskon 15%</span> -->
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">VACUM CLEANER</h3>
+        <p class="text-orange-500 font-bold">200.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+	  
+	        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="200">
+        <img src="img/motor/pompa_galon.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">POMPA GALON</h3>
+        <p class="text-orange-500 font-bold">100.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 3 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="300">
+        <img src="img/motor/chopper.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">CHOPPER</h3>
+        <p class="text-orange-500 font-bold">80.000 Coin </P>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 4 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="400">
+        <img src="img/motor/teko_listrik.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">TEKO LISTRIK</h3>
+        <p class="text-orange-500 font-bold">150.000 Coin </p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 5 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="500">
+        <img src="img/motor/cukur.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">CUKUR PORTABLE</h3>
+        <p class="text-orange-500 font-bold">80.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 6 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="600">
+        <img src="img/motor/rak_sepatu.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">RAK SEPATU SUSUN</h3>
+        <p class="text-orange-500 font-bold">120.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="700">
+        <img src="img/motor/timbangan.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">TIMBANGAN</h3>
+        <p class="text-orange-500 font-bold">150.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="800">
+        <img src="img/motor/botol_lipat.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">BOTOL MINUM LIPAT</h3>
+        <p class="text-orange-500 font-bold">120.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+	  
+	        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="100">
+        <img src="img/motor/gelas.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <!-- Diskon <span class="inline-block bg-red-600 text-xs text-white px-2 py-1 rounded-full mb-2">Diskon 15%</span> -->
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">GELAS STAINLES</h3>
+        <p class="text-orange-500 font-bold">130.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+	  
+	        <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="200">
+        <img src="img/motor/keranjang.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">KERANJANG KOTOR</h3>
+        <p class="text-orange-500 font-bold">250.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 3 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="300">
+        <img src="img/motor/tempat_beras.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">TEMPAT BERAS</h3>
+        <p class="text-orange-500 font-bold">250.000 Coin </P>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 4 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="400">
+        <img src="img/motor/thermos.png" alt="" class="rounded mb-4 w-full h-30 object-cover img-hover" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">THERMOS</h3>
+        <p class="text-orange-500 font-bold">120.000 Coin </p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 5 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="500">
+        <img src="img/motor/hair_dryer1.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">HAIR DRYER</h3>
+        <p class="text-orange-500 font-bold">130.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <!-- Kartu Produk 6 -->
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="600">
+        <img src="img/motor/panci.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">PANCI LISTRIK</h3>
+        <p class="text-orange-500 font-bold">200.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="700">
+        <img src="img/motor/ows.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">OWS E88</h3>
+        <p class="text-orange-500 font-bold">120.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+
+      <div class="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-lg hover:shadow-orange-500/30 transition" data-aos="fade-up" data-aos-delay="800">
+        <img src="img/motor/handfeld.png" alt="" class="rounded mb-4" />
+        <h3 class="text-lg text-gray-700 dar:text-gray-300 font-bold">HANDHELD FAN</h3>
+        <p class="text-orange-500 font-bold">80.000 Coin</p>
+        <a href="https://wa.me/085215185678?text=Saya%20tertarik%20dengan%20CFMoto%20MT450%2C%20apakah%20masih%20ada%3F" target="_blank" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition"
+          >Tukar via WhatsApp</a
+        >
+      </div>
+	  
+      <!-- Tambahkan kartu lainnya disini -->
+
+      <!-- Duplikat kartu produk lainnya dengan delay berbeda -->
+    </section>
+
+    <!-- CTA Section -->
+    <section id="kontak" class="text-center bg-orange-600 dark:bg-gray-900 py-12 px-6" data-aos="zoom-in">
+      <h2 class="text-2xl md:text-3xl font-bold text-white dark:text-gray-100 mb-2">Yuk, Live Bareng CS VivaLive!!?</h2>
+      <p class="text-white dark:text-gray-100 mb-4">Kami Online di Jam 11.00-12.00 / 15.00-16.00</p>
+      <a href="https://wa.me/085215185678" target="_blank" class="inline-block bg-white text-orange-600 font-semibold px-6 py-3 rounded dark:text-gray-100 dark:bg-orange-600 dark:hover:bg-gray-200 hover:bg-orange-300 transition"
+        >Hubungi via WhatsApp</a
+      >
+    </section>
+
+    <!-- Tombol WhatsApp melayang -->
+    <a href="https://wa.me/085215185678" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50">
+      <img src="img/wa-logo.svg" alt="WhatsApp Logo" class="h-8 w-8" />
+    </a>
+
+    <!-- 🦶 Footer -->
+    <footer class="bg-white p-4 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 text-center py-6 text-sm text-gray-500 dark:text-gray-400 transition">
+      <p>&copy; Viva Live <span class="font-semibold text-gray-800 dark:text-white">Satu Aplikasi Banyak Manfaat</span></p>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
